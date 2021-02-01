@@ -1,0 +1,11 @@
+<h1>Categories</h1>
+{% for obj in categories %}
+    <h3><a href={{ obj.get_absolute_url }}>{{ obj.name }}</a></h3>
+{% endfor %}
+
+<button onclick="location.href='{% url 'blog:create-article' %}'" type="button">Create Article</button>
+<h1>Articles</h1>
+{% for object in object_list %}
+    <h3><a href={{ object.get_absolute_url }}>{{ object.title }}</a></h3>
+    <p>{{ object.description }}</p>
+{% endfor %}
